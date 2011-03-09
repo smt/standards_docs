@@ -24,7 +24,7 @@ We will use server-side processes in place that automatically compress and gzip 
 
 ## Markup
 
-### HTML5 
+### HTML5
 
 HTML5 is a new version of HTML and XHTML. The [HTML5 draft](http://whatwg.org/specs/web-apps/current-work/) specification defines a single language that can be written in HTML and XML. It attempts to solve issues found in previous iterations of HTML and addresses the needs of Web Applications, an area previously not adequately covered by HTML. ([source](http://html5.org/))
 
@@ -35,6 +35,22 @@ Developers are encouraged to use parts of HTML5 when appropriate, while ensuring
 #### Template
 
 The [HTML5 Boilerplate](http://html5boilerplate.com/) is an amazing resource with example code for starting a new HTML5 site. Read the comments and the code - it contains many standards and best practices.
+
+#### Self-closing Comments
+
+Though we are using [HTML5](http://dev.w3.org/html5/spec/Overview.html), which allows for either HTML or XHTML style syntax, we prefer the strictness of XHTML. Therefore, all tags must be properly closed. For tags that can wrap nodes such as text or other elements, termination is a trivial enough task. For tags that are self-closing, the forward slash should have exactly one space preceding it `<br />` vs. the compact but incorrect `<br/>`. The W3C specifies that a single space should precede the self-closing slash ([source](http://w3.org/TR/xhtml1/#C_2)).
+
+#### Quotes
+
+In keeping with the strictness of XHTML code conventions, according to the W3C, all attributes must have a value, and must use double-quotes (<a href="http://w3.org/TR/xhtml1/#h-4.4">source</a>). The following are examples of proper and improper usage of quotes and attribute/value pairs.
+
+##### Correct
+
+    <input type="text" name="email" disabled="disabled" />
+
+##### Incorrect
+
+    <input type=text name=email disabled>
 
 #### Doctype
 
@@ -115,7 +131,7 @@ We use the `px` unit of measurement to define `font-size`, because it offers abs
 
     #selector {
         font-size: 13px;
-        line-height: 1.5; 
+        line-height: 1.5;
     }
 
 #### Incorrect
@@ -238,20 +254,20 @@ Consider the following examples of a JavaScript for-loop…
 #### Correct
 
     for (var i = 0, j = arr.length; i < j; i++) {
-        
+
     }
 
 #### Incorrect
 
     for ( var i = 0, j = arr.length; i < j; i++ )
     {
-        
+
     }
 
 #### Also incorrect
 
     for(var i=0,j=arr.length;i<j;i++){
-        
+
     }
 
 ### Variables, ID & Class
@@ -329,11 +345,11 @@ Many developers use a vertically-oriented sprite in addition to the primary spri
 There are four main image formats that should be used, detailed here:
 
 * **JPEG.** This will cover all photography-based images, such as homepage and category page promo images, or anything with a very high color count.
-* **PNG24.** This format, easily accessible in Photoshop, outputs high-color count imagery and fully supports graded opacity by pixel. Relatively, it&rsquo;s quite a heavy format as far as kilobyte weight. It is the only format that IE6 needs to execute a pngfix on. In that case, Empathy Lab recommends the DD_belatedPNG script (A pngfix fixes the issue where PNG24&rsquo;s appear to have a grey or light-blue background in IE6. They are not always compatible with background-position.)    
+* **PNG24.** This format, easily accessible in Photoshop, outputs high-color count imagery and fully supports graded opacity by pixel. Relatively, it&rsquo;s quite a heavy format as far as kilobyte weight. It is the only format that IE6 needs to execute a pngfix on. In that case, Empathy Lab recommends the DD_belatedPNG script (A pngfix fixes the issue where PNG24&rsquo;s appear to have a grey or light-blue background in IE6. They are not always compatible with background-position.)
 In many cases, you can use a GIF fallback for IE6, in place of a PNG24. This is especially true if any sprites need to be done in PNG24. All pngfixes are very slow and expensive, so it&rsquo;s best to avoid using them.
-* **PNG8.** A surprising diversity of color can be captured inside 256 colors, so it&rsquo;s worth trying PNG before heading JPG. PNG also is a lot more compressible than GIF (using tools like pngcrush and pngquant). This format allows graded opacity in nearly all browsers, but in IE6, those semi-opaque pixels are just shown 100% transparent. In many cases this is sufficient. It also does not require a pngfix script to be run, so it&rsquo;s optimized for speed.    
+* **PNG8.** A surprising diversity of color can be captured inside 256 colors, so it&rsquo;s worth trying PNG before heading JPG. PNG also is a lot more compressible than GIF (using tools like pngcrush and pngquant). This format allows graded opacity in nearly all browsers, but in IE6, those semi-opaque pixels are just shown 100% transparent. In many cases this is sufficient. It also does not require a pngfix script to be run, so it&rsquo;s optimized for speed.
 Photoshop cannot output these semi-opaque files correctly but [Fireworks can](http://www.sitepoint.com/blogs/2007/09/18/png8-the-clear-winner/).
-* **Transparent GIF 89a.** GIF 89a offers the flexibility of transparency and wide browser support, but the constraints of no graded opacity nor a color depth above 256. In our experience, color depths of 64 still provide very good quality thumbnails, and keep the file size comparably very small.    
+* **Transparent GIF 89a.** GIF 89a offers the flexibility of transparency and wide browser support, but the constraints of no graded opacity nor a color depth above 256. In our experience, color depths of 64 still provide very good quality thumbnails, and keep the file size comparably very small.
 All low-color count imagery such as icons or thematic graphics should be done in PNG8, as it&rsquo;s the most size-efficient of these four. PNG8 is our primary recommendation for most site graphics.
 
 For further optimization all of these formats, taking them through Yahoo&rsquo;s [Smush.It](http://developer.yahoo.com/yslow/smushit/) will reveal how they can be smaller.
@@ -426,7 +442,7 @@ Always use backup HTML content for Flash. All promo images should use CSS-based 
         <h4>Nike: More Than A Game</h4>
         <h5>Experience the movement and view apparel</h5>
     </a>
-    
+
     a#morethan { background:url(/promos/nikegame.jpg) no-repeat; width: 200px; height: 100px;
                  text-indent: -999px; overflow:hidden; display:block; }
 
@@ -612,12 +628,12 @@ With this approach, we think all parties have  a better chance of having aligned
 
 ## Appendix A: Validators
 
-* <a href="http://jigsaw.w3.org/css-validator/">W3C CSS Validation Service</a> 
-* <a href="https://addons.mozilla.org/en-US/firefox/addon/249">HTML Validation firefox extension</a> 
-* <a href="http://jigsaw.w3.org/css-validator/">CSS validator</a> 
-* Accessibility - <a href="http://bobby.watchfire.com/">Bobby Validation Service</a> 
-    * Tests individual pages for accessibility against either the W3C or Section 508 standards. 
-* Accessibility - <a href="http://www.cynthiasays.com/">Cynthia Says Portal</a> 
+* <a href="http://jigsaw.w3.org/css-validator/">W3C CSS Validation Service</a>
+* <a href="https://addons.mozilla.org/en-US/firefox/addon/249">HTML Validation firefox extension</a>
+* <a href="http://jigsaw.w3.org/css-validator/">CSS validator</a>
+* Accessibility - <a href="http://bobby.watchfire.com/">Bobby Validation Service</a>
+    * Tests individual pages for accessibility against either the W3C or Section 508 standards.
+* Accessibility - <a href="http://www.cynthiasays.com/">Cynthia Says Portal</a>
     * Similar to Bobby, tests individual pages for accessibility against either the W3C or Section 508 standards.
 
 ## Appendix B: Tools
@@ -679,6 +695,16 @@ Charles watches all requests and can tell you a lot of information about them. A
 
 The Microsoft Internet Explorer Developer Toolbar provides a variety of tools for quickly creating, understanding, and troubleshooting Web pages. [IE Developer Toolbar](http://www.microsoft.com/downloads/details.aspx?familyid=e59c3964-672d-4511-bb3e-2d5e1db91038&amp;displaylang=en)
 
+### JavaScript Libraries
+
+* [jQuery](http://jquery.com/) - popular, chainable, performance-optimized, and well-documented.
+* [Mootools](http://mootools.net/) - small footprint, known for its visual effects.
+* [Prototype](http://prototypejs.org/) - large footprint, huge developer community, integrated into Rails.
+* [Scriptaculous](http://script.aculo.us/) - sits on top of prototype, big, slider, draggables.
+* [Dojo](http://dojotoolkit.org/) - large, for big applications.
+* [YUI](http://developer.yahoo.com/yui/) - well-documented, best practices javascript coding.
+* [Ext](http://extjs.org/) - sits on YUI, jQuery, and Prototype. More dojo-like functionality.
+
 ### Tutorials & Tools:
 
 * [CSS Cheatsheet](http://lesliefranke.com/files/reference/csscheatsheet.html)
@@ -704,6 +730,11 @@ The Microsoft Internet Explorer Developer Toolbar provides a variety of tools fo
 * [Delicious `moluedev` tag](http://delicious.com/tag/moluedev).
 * [Nokia's JavaScript Performance Best Practices](http://wiki.forum.nokia.com/index.php/JavaScript_Performance_Best_Practices)
 
+## Revision History
+
 *Authors: Stephen Tudor*
 
-This document is based heavily upon the original [Isobar Standards Document](http://na.isobar.com/standards/), authored by Paul Irish, Nick Cooley, Adam McIntyre, Rob Larsen, Joel Oliviera, Ben Menoza and Nathan Smith.
+- 2010 March: Minor changes to license/attribution.
+- 2010 February: Initial porting to Markdown, with some reorganization.
+
+By the Empathy Lab Front-end Development practice. &nbsp; | &nbsp; Thx to [Isobar](http://na.isobar.com/standards/) and [Fellowship Technologies](http://developer.fellowshipone.com/patterns/code.php). &nbsp; | &nbsp; Steal &amp; modify plz, [CC-BY](http://creativecommons.org/licenses/by/3.0/) license.
