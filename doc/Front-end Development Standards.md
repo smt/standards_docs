@@ -42,7 +42,7 @@ Though we are using [HTML5](http://dev.w3.org/html5/spec/Overview.html), which a
 
 #### Quotes
 
-In keeping with the strictness of XHTML code conventions, according to the W3C, all attributes must have a value, and must use double-quotes (<a href="http://w3.org/TR/xhtml1/#h-4.4">source</a>). The following are examples of proper and improper usage of quotes and attribute/value pairs.
+In keeping with the strictness of XHTML code conventions, according to the W3C, all attributes must have a value, and must use double-quotes ([source](http://w3.org/TR/xhtml1/#h-4.4)). The following are examples of proper and improper usage of quotes and attribute/value pairs.
 
 ##### Correct
 
