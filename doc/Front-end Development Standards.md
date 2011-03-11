@@ -16,7 +16,23 @@ This document outlines our de-facto code standards. The primary motivation is tw
 
 For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting *Tab* in your text editor shall be equivalent to **four spaces**.
 
-### Readability vs Compression
+### Self-closing Comments
+
+Though we are using [HTML5](http://dev.w3.org/html5/spec/Overview.html), which allows for either HTML or XHTML style syntax, we prefer the strictness of XHTML. Therefore, all tags must be properly closed. For tags that can wrap nodes such as text or other elements, termination is a trivial enough task. For tags that are self-closing, the forward slash should have exactly one space preceding it `<br />` vs. the compact but incorrect `<br/>`. The W3C specifies that a single space should precede the self-closing slash ([source](http://w3.org/TR/xhtml1/#C_2)).
+
+### Quotes
+
+In keeping with the strictness of XHTML code conventions, according to the W3C, all attributes must have a value, and must use double-quotes ([source](http://w3.org/TR/xhtml1/#h-4.4)). The following are examples of proper and improper usage of quotes and attribute/value pairs.
+
+#### Correct
+
+    <input type="text" name="email" disabled="disabled" />
+
+#### Incorrect
+
+    <input type=text name=email disabled>
+
+### Readability vs. Compression
 
 We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged, along with ASCII art, where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.
 
@@ -35,22 +51,6 @@ Developers are encouraged to use parts of HTML5 when appropriate, while ensuring
 #### Template
 
 The [HTML5 Boilerplate](http://html5boilerplate.com/) is an amazing resource with example code for starting a new HTML5 site. Read the comments and the code - it contains many standards and best practices.
-
-#### Self-closing Comments
-
-Though we are using [HTML5](http://dev.w3.org/html5/spec/Overview.html), which allows for either HTML or XHTML style syntax, we prefer the strictness of XHTML. Therefore, all tags must be properly closed. For tags that can wrap nodes such as text or other elements, termination is a trivial enough task. For tags that are self-closing, the forward slash should have exactly one space preceding it `<br />` vs. the compact but incorrect `<br/>`. The W3C specifies that a single space should precede the self-closing slash ([source](http://w3.org/TR/xhtml1/#C_2)).
-
-#### Quotes
-
-In keeping with the strictness of XHTML code conventions, according to the W3C, all attributes must have a value, and must use double-quotes ([source](http://w3.org/TR/xhtml1/#h-4.4)). The following are examples of proper and improper usage of quotes and attribute/value pairs.
-
-##### Correct
-
-    <input type="text" name="email" disabled="disabled" />
-
-##### Incorrect
-
-    <input type=text name=email disabled>
 
 #### Doctype
 
